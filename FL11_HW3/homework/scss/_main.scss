@@ -1,0 +1,246 @@
+// Write your styles here
+$font-family-primary: 'Source Sans Pro' !default;
+$font-family-headers: $font-family-primary;
+$font-family-secondary: Hind !default;
+
+$font-weight-normal: 400 !default;
+$font-weight-bold: 600 !default;
+$font-weight-extra-bold: 700 !default;
+
+$font-size-base: 14px !default;
+$logo-title-font-size: $font-size-base * 1.5;
+$logo-subtitle-font-size: $font-size-base * 0.857;
+$headers-font-size-map: (
+  h1: $font-size-base * 4.7,
+  h2: $font-size-base * 1.86,
+  h3: $font-size-base * 1.5,
+);
+
+$color-default: #c0c3ce !default;
+$body-background-color: #ffffff !default;
+$accent-color: #3a47ff !default;
+$headers-color: #333333 !default;
+$button-background-color: #669900 !default;
+$button-color: #ffffff !default;
+$logo-color: #333333 !default;
+$card-background-color: #333333 !default;
+$banner-background: linear-gradient(90deg, $button-background-color, $accent-color);
+$footer-background-color: #333333 !default;
+
+$container-width: 960px !default;
+$btn-width: 120px !default;
+$btn-height: 42px !default;
+$border-radius-base: 3px;
+$card-border-radius: $border-radius-base * 2;
+$banner-border-radius: $border-radius-base * 2;
+$button-border-radius: $border-radius-base;
+
+$poster: url("../img/m-h-day.jpg") !default;
+
+@each $header-tag, $font-size in $headers-font-size-map {
+  .#{$header-tag} {
+    font-family: $font-family-headers;
+    font-size: $font-size;
+    color: $headers-color;
+    font-weight: $font-weight-bold;
+  }
+}
+
+@mixin underline($color) {
+  display: inline-block;
+  background: linear-gradient(transparent 50%, $color 50%) no-repeat;
+}
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font-family-primary;
+  color: $color-default;
+  background-color: $body-background-color;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+}
+
+.button {
+  width: $btn-width;
+  height: $btn-height;
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  color: $button-color;
+  background-color: $button-background-color;
+  border: 0;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+}
+
+.landing-logo {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 0;
+
+  p {
+    margin: 0 12px;
+    line-height: 1.2;
+    font-family: $font-family-secondary;
+    font-size: $logo-title-font-size;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    color: $logo-color;
+    span {
+      display: block;
+      font-weight: $font-weight-normal;
+      font-size: $logo-subtitle-font-size;
+    }
+  }
+}
+
+.header {
+  max-height: 800px;
+  width: 100%;
+  padding-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  background: $poster no-repeat scroll center;
+  background-size: cover;
+  border-bottom-right-radius: 400px 150px;
+
+  &-wrap {
+    @extend .container;
+  }
+
+  &_heading {
+    max-width: $container-width / 2;
+    @extend .h1;
+  }
+
+  &_text {
+    max-width: $container-width / 2;
+    font-family: $font-family-primary;
+  }
+
+  &_button {
+    @extend .button;
+  }
+}
+
+.section {
+  @extend .container;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &_text {
+    width: 100%;
+    text-align: center;
+    @extend .h2;
+  }
+
+  &_card_wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &_card {
+    width: 270px;
+    padding: 10px;
+    margin: 0 10px 10px;
+    box-sizing: border-box;
+    background-color: $card-background-color;
+    text-align: center;
+    border-radius: $card-border-radius;
+
+    &_img {
+      width: 100%;
+      height: auto;
+      border-radius: $card-border-radius;
+    }
+
+    &_heading {
+      display: inline-block;
+      margin-bottom: 0;
+      color: #ffffff;
+      font-size: 20px;
+      @include underline($accent-color);
+    }
+  }
+
+  &_banner {
+    background-image: $banner-background;
+    width: 100%;
+    max-width: 640px;
+    padding: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(50%);
+    border-radius: $banner-border-radius;
+    &_text_wrap {
+      max-width: 300px;
+      min-height: 100px;
+    }
+
+    &_heading {
+      @extend .h3;
+      margin-bottom: 0;
+    }
+
+    &_text {
+      font-family: $font-family-primary;
+      font-weight: $font-weight-normal;
+      font-size: 12px;
+    }
+
+    &_button {
+      @extend .button;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  background-color: $footer-background-color;
+  display: flex;
+  justify-content: center;
+
+  &-wrap {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 140px 0 40px;
+  }
+
+  &_text {
+    max-width: $container-width / 3;
+    width: 100%;
+    margin: 0 0 10px;
+  }
+
+  &-cr {
+    max-width: $container-width / 3;
+    width: 100%;
+    text-align: center;
+  }
+
+  &_logo {
+    padding: 0;
+    margin: 0 0 10px;
+    p {
+      color: $color-default;
+    }
+  }
+}
