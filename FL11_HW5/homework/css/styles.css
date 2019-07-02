@@ -1,0 +1,279 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+:root {
+    --bg-color--dark: #0b192f;
+    --bg-color--header: #162b4d;
+    --link: #fff;
+    --link--hover: #b8b8b8;
+    --bg-footer-color: #162b4d;;
+}
+
+body {
+    font-family: roboto, sans-serif;
+}
+
+.post-1 {
+    background: #B71757;
+}
+
+.post-2 {
+    background: #0D7E71;
+}
+
+.post-3 {
+    background: #b1660e;
+}
+
+.post-4 {
+    background: #d12767;
+}
+
+.post-5 {
+    background: #2d95bb;
+}
+
+/* Your styles go here */
+body {
+    background-color: var(--bg-color--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 36px;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background: #162b4d;
+    color: #b8b8b8;
+    padding: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    color: #ffffff;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-logo--color {
+    color: #d12767;
+}
+
+.nav-item {
+    color: #ffffff;
+    padding: 38px 40px;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.nav-item:hover {
+    background: #224676;
+}
+
+.nav-menu-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    display: none;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #e8e8e8;
+}
+
+.post--news {
+    margin-bottom: 1rem;
+    color: var(--bg-color--dark);
+    background-color: #ffffff;
+}
+
+.post--news .post__content .post__title {
+    font-size: 3rem;
+}
+
+.post__poster {
+    width: 100%;
+}
+
+.post__poster img {
+    width: 100%;
+    height: 100%;
+}
+
+.post__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.post__title {
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.post__text {
+    font-size: 1.25rem;
+}
+
+.date {
+    text-align: center;
+}
+
+.date__day {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.date__month {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .nav-menu-icon {
+        display: block;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    main {
+        width: 67%;
+    }
+
+    aside {
+        padding-left: 1rem;
+        box-sizing: border-box;
+        width: 33%;
+    }
+
+    .wrapper {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        width: 75%;
+    }
+
+    aside {
+        width: 25%;
+    }
+
+    .post {
+        flex-direction: row;
+    }
+
+    .post--news {
+        flex-direction: column;
+    }
+
+    .post__poster {
+        width: 50%;
+    }
+
+    .post__content {
+        width: 50%;
+    }
+
+    .post__title {
+        width: 75%;
+    }
+
+    .post__text {
+        width: 75%;
+        line-height: 2rem;
+    }
+
+    .date {
+        position: absolute;
+        top: 1rem;
+    }
+
+    .post:nth-child(even) .post__content .date {
+        left: 2rem;
+    }
+
+    .post:nth-child(odd) .post__content .date {
+        right: 2rem;
+    }
+
+    .post:nth-child(even) .post__content {
+        order: 1;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .post:nth-child(even) .post__poster {
+        order: 2;
+    }
+
+    .post--news:nth-child(odd) .post__content {
+        text-align: center;
+    }
+
+    .post--news:nth-child(even) .post__content {
+        order: 2;
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .post--news:nth-child(even) .post__poster {
+        order: 1;
+    }
+}
