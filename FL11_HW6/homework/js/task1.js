@@ -5,4 +5,4 @@ const b2 = parseFloat(prompt('Enter b2'));
 const c1 = parseFloat(prompt('Enter c1'));
 const c2 = parseFloat(prompt('Enter c2'));
 const HALF_DIVIDER = 2;
-console.log(Math.abs(a1 - b1) / HALF_DIVIDER === c1 && Math.abs(a2 - b2) / HALF_DIVIDER === c2);
+console.log((a1 + b1) / HALF_DIVIDER === c1 && (a2 + b2) / HALF_DIVIDER === c2);
