@@ -1,0 +1,44 @@
+button {
+    padding: 0;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.row,
+.todo {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.input-todo {
+    width: 100%;
+    padding: 4px 12px;
+}
+
+.checkbox,
+.icon-add,
+.icon-edit,
+.icon-save,
+.icon-delete {
+    padding: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.icon-delete {
+    margin-left: auto;
+}
+
+.todo-text {
+    display: flex;
+    height: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.hidden {
+    display: none;
+}
